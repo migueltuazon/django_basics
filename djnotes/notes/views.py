@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from django.views.generic import View
+from .models import Note
 # Create your views here.
 class Index(View):
     template_name = 'notes/index.html'
 
     def get_context_data(self):
-        context = {}
+        context = {
+            'notes' : Note objects.order_by('_id'),
+        }
         return context
 
     def get(self, request, *args, **kwargs):
