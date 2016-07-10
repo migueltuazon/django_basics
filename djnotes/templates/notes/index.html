@@ -14,27 +14,12 @@
 
 </head>
 <body>
-    <div calss="container">
-    {# Header Section #}
-        <div class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button trype="button" class="navbar-toogle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="javascript:void(0)">
-                        <strong>Notes</strong>
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse navbar-responsive-collapse">
-                </div>
-            </div>
-        </div>
-    </div>
+    {% extends 'base.html' %}
+
+    {% block title %}Notes{% endblock title %}
 
     {# Content Section #}
+    {% block content %}
     <div class="row">
         {% for note in notes %}
         <div class="col-md-3">
@@ -49,6 +34,7 @@
         </div>
         {% endfor %}
     </div>
+    {% endblock content %}
 
     {# JS section #}
     <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
