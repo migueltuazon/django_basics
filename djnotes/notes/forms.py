@@ -1,6 +1,6 @@
-form django import forms
+from django import forms
 
-form .models import Note
+from .models import Note
 
 class NoteForm(forms.ModelForm):
     class Meta:
