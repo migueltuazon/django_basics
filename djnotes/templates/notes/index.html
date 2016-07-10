@@ -1,43 +1,20 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet">
-<link href="{% static 'css/styles.css' %}" rel="stylesheet">
-
-<title>My awesome note app</title>
-
-</head>
-<body>
     {% extends 'base.html' %}
 
     {% block title %}Notes{% endblock title %}
-
-    {# Content Section #}
-    {% block content %}
-    <div class="row">
-        {% for note in notes %}
-        <div class="col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <strong>{{ note.title }}</strong>
-                </div>
-                <div class="panel-body">
-                    {{ note.note }}
-                </div>
+{# Content Section #}
+{% block content %}
+<div class="row">
+    {% for note in notes %}
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong>{{ note.title }}</strong>
+            </div>
+            <div class="panel-body">
+                {{ note.note }}
             </div>
         </div>
-        {% endfor %}
     </div>
-    {% endblock content %}
-
-    {# JS section #}
-    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</body>
-</html>
+    {% endfor %}
+</div>
+{% endblock content %}
