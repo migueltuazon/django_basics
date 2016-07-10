@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import View
+
 from .models import Note
 from .forms import NoteForm
 # Create your views here.
