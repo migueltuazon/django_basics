@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import View
 from .models import Note
+from .form import NoteForm
 # Create your views here.
 class Index(View):
     template_name = 'notes/index.html'
